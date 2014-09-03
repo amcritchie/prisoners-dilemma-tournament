@@ -1,0 +1,57 @@
+<%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <article class="one_forth">
+
+      <div class="field">
+        <%= f.label :name, 'Your name' %>
+        <br>
+        <%= f.text_field :name, :class => 'userData'%>
+      </div>
+      <div class="field">
+        <%= f.label :codename, 'Name of your Program.' %>
+        <br>
+        <%= f.text_field :codename, :class => 'userData', :id => 'codeName' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+
+      <%= link_to 'Back', users_path %>
+      <%= link_to 'Home', root_path %>
+
+    </article>
+
+
+    <!--<article class="three_forth">-->
+      <div class="fieldLarge">
+        <h5 id="nameOfClass" style="color: blue">class </h5>
+        <h6>&nbsp&nbsp&nbsp&nbsp def initialize</h6>
+        <h6>&nbsp&nbsp&nbsp&nbsp end</h6>
+
+        <h6>&nbsp&nbsp&nbsp&nbsp def name</h6>
+        <h6 id="nameMethod">""</h6>
+        <h6>&nbsp&nbsp&nbsp&nbsp end</h6>
+
+        <h6>&nbsp&nbsp&nbsp&nbsp def choice(record, cooperate_score, defect_score, win_score, lose_score)</h6>
+
+        <br>
+        <%= f.text_area :code, :class => 'codeData' %>
+        <h6 id="end">&nbsp&nbsp&nbsp&nbsp end</h6>
+        <h5 id="endend">end</h5>
+      </div>
+
+    <!--</article>-->
+
+<% end %>

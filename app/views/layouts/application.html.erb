@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PrisonersDilemma</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="wrapper">
+  <section class="clearfix">
+    <%= link_to 'Home', root_path %>
+
+    <%= link_to 'Fight', new_tournament_path %>
+
+    <%= yield %>
+  </section>
+</div>
+
+</body>
+</html>

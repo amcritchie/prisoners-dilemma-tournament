@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* clearfix */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* * For IE 6/7 only * Include this rule to trigger hasLayout and contain floats. */
+.clearfix {
+    *zoom: 1;
+}
+
+.wrapper {
+    /*position: relative;*/
+    margin: auto;
+    width: 980px;
+    border: solid green 3px;
+}
+
+article{
+    position: relative;
+    margin-left: 20px;
+}
+
+.codeData{
+    /*display: inline-block;*/
+    width: 470px;
+    height: 300px;
+    color: blue;
+    /*border: solid green 5px;*/
+    position: relative;
+    margin-left: 30px;
+    margin-top: -40px;
+}
+
+.userData{
+    width: 300px;
+}
+
+.one_forth{
+    width:420px;
+    display: inline-block;
+}
+
+.field{
+    width: 200px;
+    display: block;
+}
+
+.fieldLarge{
+    width:540px;
+    float: right;
+
+}
+
+.new_user {
+    display: inline-block;
+}
+
+h6{
+    position: relative;
+    margin-top: -20px;
+}
+
+#end{
+    color: #666;
+    margin-top: -5px;
+}
+
+#nameMethod{
+    margin-left: 30px;
+}
+
+#endend{
+    color: blue;
+    margin-top: -25px;
+}
+
+.userInfo{
+    display: inline-block;
+    width: 200px;
+    /*border-right: solid blueviolet 3px;*/
+    position: relative;
+}
+
+#roundOneWinners{
+    display: hidden;
+}

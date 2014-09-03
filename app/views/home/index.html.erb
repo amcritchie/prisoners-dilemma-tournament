@@ -1,0 +1,22 @@
+<h1>Prisoners Dilemma</h1>
+
+<%= link_to "Add your fighter", new_user_path %>
+
+<ul>
+  <li>
+    <h2 class="userInfo">Id</h2>
+    <h2 class="userInfo">User</h2>
+    <h2 class="userInfo">Code</h2>
+    <h2 class="userInfo">Score</h2>
+  </li>
+  <hr>
+  <% @users.each do |user| %>
+      <li>
+        <h4 class="userInfo"><%= user.id%></h4>
+        <h4 class="userInfo"><%= user.name%></h4>
+        <h4 class="userInfo"><%= user.codename%></h4>
+        <h4 class="userInfo"><%= user.score%></h4>
+      </li>
+
+  <% end %>
+</ul>

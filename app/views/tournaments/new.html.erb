@@ -1,0 +1,29 @@
+<h1>New Tourny</h1>
+
+
+<h3> Round one:</h3>
+<ul>
+  <% @challenger_array.each do |challenger| %>
+      <li><%= challenger.name %></li>
+  <% end %>
+</ul>
+
+<button id="rr1">Run Round One</button>
+<div id="roundOneWinners">
+<h2> Round One Winners</h2>
+<ul>
+<% @winners.each do |winner| %>
+    <li><%= winner %></li>
+<% end %>
+</ul>
+</div>
+
+<h2> Round Two Winners</h2>
+
+
+
+<h2>Blah</h2>
+
+
+
+
