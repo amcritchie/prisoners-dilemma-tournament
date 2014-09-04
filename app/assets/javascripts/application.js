@@ -16,7 +16,6 @@
 //= require_tree .
 
 $(document).ready(function () {
-    $('div').css('border', 'solid blue 3px');
 
     $('.round:nth-of-type(3)').hide();
     $('.round:nth-of-type(5)').hide();
