@@ -82,28 +82,32 @@ class TournamentsController < ApplicationController
           !!p1choice
           !!p2choice
 
-          five_in_row = false
+          p1five_in_row = false
+          p2five_in_row = false
 
-          if (round > 5) && (round < 95)
+
+          if @p1last_five.length == 5
             if @p1last_five.uniq.length == 1
               challenger1_record.push(-30)
               challenger2_record.push(10)
-              five_in_row = true
+              @p1last_five = []
+              p1five_in_row = true
             else
-              five_in_row = false
+              p1five_in_row = false
             end
             if @p2last_five.uniq.length == 1
               challenger2_record.push(-30)
               challenger1_record.push(10)
-              five_in_row = true
+              @p2last_five = []
+              p2five_in_row = true
             else
-              five_in_row = false
+              p2five_in_row = false
             end
             @p1last_five.shift
-            @p1last_five.shift
+            @p2last_five.shift
           end
 
-          if !five_in_row
+          if (!p1five_in_row || !p2five_in_row)
             if p1choice
 
               if p2choice
