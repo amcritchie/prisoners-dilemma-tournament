@@ -82,43 +82,53 @@ class TournamentsController < ApplicationController
           !!p1choice
           !!p2choice
 
+          five_in_row = false
 
           if (round > 5) && (round < 95)
             if @p1last_five.uniq.length == 1
               challenger1_record.push(-30)
               challenger2_record.push(10)
+              five_in_row = true
+            else
+              five_in_row = false
             end
             @p1last_five.shift
             if @p2last_five.uniq.length == 1
               challenger2_record.push(-30)
               challenger1_record.push(10)
+              five_in_row = true
+            else
+              five_in_row = false
             end
             @p1last_five.shift
+          end
 
-          elsif p1choice
+          if !five_in_row
+            if p1choice
 
-            if p2choice
-              challenger1_record.push(cooperate_score)
-              challenger2_record.push(cooperate_score)
+              if p2choice
+                challenger1_record.push(cooperate_score)
+                challenger2_record.push(cooperate_score)
 
 
-            elsif !p2choice
-              challenger1_record.push(lose_score)
-              challenger2_record.push(win_score)
+              elsif !p2choice
+                challenger1_record.push(lose_score)
+                challenger2_record.push(win_score)
+
+              end
+
+            elsif !p1choice
+              if p2choice
+                challenger1_record.push(win_score)
+                challenger2_record.push(lose_score)
+
+              elsif !p2choice
+                challenger1_record.push(defect_score)
+                challenger2_record.push(defect_score)
+
+              end
 
             end
-
-          elsif !p1choice
-            if p2choice
-              challenger1_record.push(win_score)
-              challenger2_record.push(lose_score)
-
-            elsif !p2choice
-              challenger1_record.push(defect_score)
-              challenger2_record.push(defect_score)
-
-            end
-
           end
 
           round += 1
