@@ -67,7 +67,7 @@ class TournamentsController < ApplicationController
       p1 = Challenger.new(challenger1.code, challenger1.name)
       p2 = Challenger.new(challenger2.code, challenger2.name)
 
-      while round < 10
+      while round < 100
 
         p1choice = p1.choice(challenger1_record, cooperate_score, defect_score, win_score, lose_score)
         p2choice = p2.choice(challenger2_record, cooperate_score, defect_score, win_score, lose_score)
