@@ -103,6 +103,14 @@ h6{
     position: relative;
 }
 
-#roundOneWinners{
+#roundOne{
+
+}
+
+#roundOneResults{
+    display: hidden;
+}
+
+#roundTwo{
     display: hidden;
 }
