@@ -92,7 +92,6 @@ class TournamentsController < ApplicationController
             else
               five_in_row = false
             end
-            @p1last_five.shift
             if @p2last_five.uniq.length == 1
               challenger2_record.push(-30)
               challenger1_record.push(10)
@@ -100,6 +99,7 @@ class TournamentsController < ApplicationController
             else
               five_in_row = false
             end
+            @p1last_five.shift
             @p1last_five.shift
           end
 
