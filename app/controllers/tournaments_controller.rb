@@ -86,26 +86,45 @@ class TournamentsController < ApplicationController
           p2five_in_row = false
 
 
+
           if @p1last_five.length == 5
-            if @p1last_five.uniq.length == 1
-              challenger1_record.push(-30)
+            p "#{@p1last_five} p1"
+
+            if (@p1last_five.uniq.length == 1) && (@p2last_five.uniq.length == 1)
+              p "thats 5"
+              challenger1_record.push(10)
               challenger2_record.push(10)
               @p1last_five = []
-              p1five_in_row = true
-            else
-              p1five_in_row = false
-            end
-            if @p2last_five.uniq.length == 1
-              challenger2_record.push(-30)
-              challenger1_record.push(10)
               @p2last_five = []
               p2five_in_row = true
+              p1five_in_row = true
             else
-              p2five_in_row = false
+
+              if @p1last_five.uniq.length == 1
+                p "thats 5"
+                challenger1_record.push(-30)
+                challenger2_record.push(10)
+                @p1last_five = []
+                p1five_in_row = true
+              else
+                p1five_in_row = false
+              end
+              p "#{@p2last_five} p2"
+              if @p2last_five.uniq.length == 1
+                p "thats 5 again"
+
+                challenger2_record.push(-30)
+                challenger1_record.push(10)
+                @p2last_five = []
+                p2five_in_row = true
+              else
+                p2five_in_row = false
+              end
+              @p1last_five.shift
+              @p2last_five.shift
             end
-            @p1last_five.shift
-            @p2last_five.shift
-          end
+            end
+
 
           if (!p1five_in_row || !p2five_in_row)
             if p1choice
