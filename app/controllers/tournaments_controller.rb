@@ -85,8 +85,6 @@ class TournamentsController < ApplicationController
           p1five_in_row = false
           p2five_in_row = false
 
-
-
           if @p1last_five.length == 5
             p "#{@p1last_five} p1"
 
